@@ -1,0 +1,163 @@
+{
+  "id": "sigf/grandtheftminecraft",
+  "version": "1.5.0",
+  "name": "GrandTheftMinecraft",
+  "tagline": "Minecraft creative mode in GTA V story mode: build with 630+ blocks, blow up cars with TNT and set Minecraft mobs on Los Santos.",
+  "how_to_play": [
+    "GTA V story mode with Minecraft's hotbar, creative inventory, blocks and items: build anywhere in Los Santos, light TNT, throw ender pearls, shoot arrows.",
+    "Press Play and load story mode. The first time, the top-left corner shows the setup (Minecraft textures and sounds); then restart GTA once when it asks.",
+    "F6 turns Minecraft mode on and off, E opens the creative inventory, 1-9 or the wheel pick a hotbar slot, double-tap Space to fly.",
+    "Left mouse breaks or hits, right mouse places or uses, middle mouse picks the block you look at. In a car, GTA's driving controls are unchanged.",
+    "Spawn eggs bring zombies, skeletons, creepers and more that fight GTA's people; build a Wither or golems like in Minecraft."
+  ],
+  "kind": "mashup",
+  "games": [
+    {
+      "game": "gta5",
+      "role": "host",
+      "label": "GTA V Legacy",
+      "engine": "GTA V Legacy (RAGE, story mode) + ScriptHookV ASI GrandTheftMinecraft (C++) + add-on DLC pack",
+      "apps": {
+        "steam": "271590"
+      },
+      "runtime": "GTA V Legacy (GTA5.exe), any build ScriptHookV supports; Enhanced is not supported"
+    },
+    {
+      "game": "minecraft",
+      "role": "guest",
+      "label": "Minecraft",
+      "uses": "textures, font and sounds of Minecraft Java 1.21.11, read from the player's own install or downloaded from Mojang's servers on first launch; Minecraft is not launched"
+    }
+  ],
+  "requires": [
+    {
+      "id": "scripthookv",
+      "page": "https://www.dev-c.com/gtav/scripthookv/",
+      "license": "Alexander Blade: free, not redistributable",
+      "note": "ScriptHookV for your GTA V Legacy build: copy ScriptHookV.dll and dinput8.dll from its bin folder into the GTA V folder"
+    },
+    {
+      "id": "openiv-asi",
+      "page": "https://openiv.com/",
+      "license": "OpenIV team: free, not redistributable",
+      "note": "optional, for textured blocks, Steve and mobs: OpenIV > Tools > ASI Manager > OpenIV.asi, then add <Item>dlcpacks:/gtm/</Item> to mods\\update\\update.rpf\\common\\data\\dlclist.xml"
+    }
+  ],
+  "requires_files": [
+    {
+      "id": "scripthookv",
+      "game": "gta5",
+      "path": "{game}/ScriptHookV.dll",
+      "message": "Install Script Hook V for your GTA V build first",
+      "page": "https://www.dev-c.com/gtav/scripthookv/"
+    }
+  ],
+  "install": [
+    {
+      "game": "gta5",
+      "strategy": "game-dir-snapshot",
+      "files": [
+        {
+          "src": "grandtheftminecraft-gta5.zip",
+          "dst": "{game}",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "args.txt",
+              "sha256": "0e08ca288106ada67ac9fee4cf146cd7f7dad40c9cc2c29390541a4993b19332"
+            },
+            {
+              "path": "GrandTheftMinecraft.asi",
+              "sha256": "b205447a069c42d1b8a1b74b4a5382ea7e99561031b2f599cb79281c13672939"
+            },
+            {
+              "path": "GrandTheftMinecraft/defs.txt",
+              "sha256": "8ee131d2976dcbcae6b40d86fab9bde6afb95c948a53249cb4140d56cdd75121"
+            },
+            {
+              "path": "GrandTheftMinecraft/dlc_tex.txt",
+              "sha256": "e8c10b37a5ca52ff6644e8a7b63ff0a9595766bad8d43ab953aa9f4c0ff65379"
+            },
+            {
+              "path": "GrandTheftMinecraft/docs/LICENSE",
+              "sha256": "a5e0606d0d9ec2c083e9cbd5edad20f91cffa4d19a721d3f965d6962fd84c3d8"
+            },
+            {
+              "path": "GrandTheftMinecraft/docs/NOTICE.md",
+              "sha256": "690c91b167b35bb9e9932bac003603e872a995be8b9d9a4ef7c5b85a73563bbf"
+            },
+            {
+              "path": "GrandTheftMinecraft/docs/README.md",
+              "sha256": "c7be316cadf3a3ce4d403b0e2e90932aef4aaade899e493d42f3005165e02b9e"
+            },
+            {
+              "path": "GrandTheftMinecraft/icons.txt",
+              "sha256": "271302a49d7cb48536759303c4a729dff266b529eb34d8184a41f9a770aa118f"
+            },
+            {
+              "path": "GrandTheftMinecraft/rigs.txt",
+              "sha256": "268e7939ed8d0dfd86dc290b5c71d09d71d252274204670b1079fac583071dbd"
+            },
+            {
+              "path": "GrandTheftMinecraft/shapes.txt",
+              "sha256": "086906af4b50139f541b1a7164302a1f8c7e7af1789a45a50d994fe57133c49b"
+            },
+            {
+              "path": "mods/update/x64/dlcpacks/gtm/dlc.rpf",
+              "sha256": "f35c643d05a4eab2fe8f452247c5d7fdf0de3b4163edbc942b1e6d4b7a711d61"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/grandtheftminecraft/releases/download/v1.5.0/grandtheftminecraft-gta5.zip",
+          "sha256": "26eaa63f54c81640cd9f4ab8ed3e40b256b8d0f142a2846db6532999b37fa4e3",
+          "size": 5046399
+        }
+      ]
+    }
+  ],
+  "launch": [
+    {
+      "game": "gta5",
+      "args": []
+    }
+  ],
+  "files": [
+    {
+      "name": "grandtheftminecraft-gta5.zip",
+      "url": "https://github.com/SIGFAI/grandtheftminecraft/releases/download/v1.5.0/grandtheftminecraft-gta5.zip",
+      "sha256": "26eaa63f54c81640cd9f4ab8ed3e40b256b8d0f142a2846db6532999b37fa4e3",
+      "size": 5046399
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/cyteon/GrandTheftMinecraft",
+    "license": "MIT",
+    "upstream_license": "MIT",
+    "tag": "v1.5.0",
+    "commit": "f7b3be4dddee724155e75ce995ba7693631d75c9",
+    "hosted": "https://github.com/SIGFAI/grandtheftminecraft"
+  },
+  "media": {},
+  "built_by": {
+    "author": "cyteon",
+    "authors": [
+      "cyteon"
+    ],
+    "packaged_by": "SIGF"
+  },
+  "idea_by": "cyteon",
+  "built_at": "2026-10-07T00:00:00.000Z",
+  "conflicts": [
+    "sigf/um-gta5-passthrough",
+    "sigf/witherstorm-gta5",
+    "sigf/mc-in-gta-enhanced"
+  ],
+  "status": "beta",
+  "issues": "https://github.com/cyteon/GrandTheftMinecraft/issues",
+  "notes": [
+    "You need GTA V Legacy (GTA5.exe, not Enhanced) and ScriptHookV for your game build: copy ScriptHookV.dll and dinput8.dll from its bin folder into the GTA V folder. Story mode only, never GTA Online: BattlEye stays off while installed.",
+    "No Minecraft files are shipped: on first launch the mod reads Minecraft Java 1.21.11 from your own launcher, or downloads the official files from Mojang (internet needed once). Made for players who own Minecraft: Java Edition.",
+    "Optional, for textured lit blocks, Steve and mobs: install OpenIV.asi (OpenIV > Tools > ASI Manager), then in OpenIV add <Item>dlcpacks:/gtm/</Item> to mods\\update\\update.rpf\\common\\data\\dlclist.xml. Without it, blocks are drawn flat.",
+    "Restore removes the mod; it asks to confirm because the mod writes its textures into its own block pack. The GrandTheftMinecraft folder keeps your config, builds and the Minecraft files it made: delete it by hand.",
+    "Beta: report bugs to the author with the Report a bug link, with GrandTheftMinecraft\\gtm.log."
+  ]
+}
